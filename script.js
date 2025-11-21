@@ -1,11 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-main ul');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-main a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navMenu && hamburger && navMenu.classList.contains('active')) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+    });
+
+    // Your existing CRUD functionality
     const nameinput = document.getElementById("name_input");
     const emailinput = document.getElementById("email_input");
     const saveinput = document.getElementById("save-btn");
+    const cancelBtn = document.getElementById("cancel-btn");
     const table = document.querySelector("tbody");
-    let students =  [];
+    let students = [];
     let currentid = null;
     let isediting = false;
+    
+    // Initialize cancel button if it exists
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', resetForm);
+    }
     
     updateTable();
 
@@ -71,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             emailinput.value = student.email;
             currentid = id;
             isediting = true;
-            
+            saveinput.textContent = 'Update';
         }
     }
 
@@ -91,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
             table.appendChild(row);
         });
 
-    
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const id = parseInt(btn.dataset.id);
@@ -99,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        
         document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const id = parseInt(btn.dataset.id);
@@ -121,31 +159,45 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(email);
     }
 
-    const Homesection=document.querySelector['a[href="Home-section"]']?.addEventListener('click',function(e){
-        e.preventDefault();
-        Homesection.scrollIntoView({behavior:'smooth'})
-    })
+    // Fixed smooth scrolling functionality
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu if open
+                if (hamburger && hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+                
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
-    
-const notificationssection=document.querySelector('a[href="notifcations-section"]')?.addEventListener('click',function(e){
-    e.preventDefault();
-    notificationssection.scrollIntoView({behavior:'smooth'})
-})
-   
-
-const aboutsection=document.querySelector('a[href="about-section"]')?.addEventListener('click',function(e){
-    e.preventDefault();
-    aboutsection.scrollIntoView({behavior:'smooth'})
-})
-const servicessection=document.querySelector('a[href="services-section"]')?.addEventListener('click',function(e){
-    e.preventDefault();
-servicessection.scrollIntoView({behavior:'smooth'})
-})
-const contactsection=document.querySelector(['a[href="contact-section"]'])?.addEventListener('click',function(e){
-    e.preventDefault();
-    contactsection.scrollIntoView({behavior:'smooth'})
-})
-    
-
+    // Form submission
     saveinput.addEventListener('click', onformsubmit);
+
+    // Add Enter key support for form submission
+    if (nameinput && emailinput) {
+        nameinput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                onformsubmit(e);
+            }
+        });
+        
+        emailinput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                onformsubmit(e);
+            }
+        });
+    }
 });

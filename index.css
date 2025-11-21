@@ -91,6 +91,27 @@ header {
     transform: translateY(-2px);
 }
 
+/* Hamburger Menu (Hidden by default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
 .form_container {
     width: 50%;
     margin-left: 350px;
@@ -592,27 +613,42 @@ html {
     opacity: 0.9;
 }
 
-/* ========== MOBILE RESPONSIVE FIXES ========== */
+@media (max-width: 768px) {
+    .footer-section {
+        min-width: 150px;
+    }
+}
 
+@media (max-width: 480px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+}
+
+/* ========== MOBILE RESPONSIVE FIXES ========== */
 @media (max-width: 768px) {
     body {
         padding: 15px;
-        padding-top: 130px;
+        padding-top: 100px;
     }
 
-    /* Header Mobile Fix */
+    /* Header Mobile Fix with Hamburger */
     .nav-main {
-        flex-direction: column;
+        flex-direction: row;
         padding: 10px 15px;
-        gap: 15px;
+        position: relative;
     }
     
     .header-content {
         flex-direction: row;
         justify-content: flex-start;
-        width: 100%;
         gap: 15px;
         text-align: left;
+        flex: 1;
     }
     
     .header-text h1 {
@@ -628,20 +664,64 @@ html {
     }
     
     .university-logo {
-        height: 50px;
+        height: 45px;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex;
+        z-index: 1001;
     }
     
     .nav-main ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(26, 82, 118, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        gap: 0;
+        transition: 0.3s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-main ul.active {
+        right: 0;
+    }
+    
+    .nav-main li {
         width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .nav-main li a {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        white-space: nowrap;
+        display: block;
+        padding: 20px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .nav-main li:last-child {
+        border-bottom: none;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     /* Form fixes */
@@ -661,47 +741,34 @@ html {
         padding: 12px;
     }
 
-    /* Notifications - 2 up, 1 down layout */
+    /* Notifications - Keep original layout but make responsive */
     .Notifications {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px 10px;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 20px;
     }
 
-    .Admissions, .Academics {
-        width: calc(50% - 15px);
-        min-width: 250px;
-    }
-
-    .Fees {
+    .Admissions, .Academics, .Fees {
         width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 500px;
     }
 
-    /* Services - 2 pairs layout */
+    /* Services - Keep original layout but make responsive */
     .services-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
     }
 
     .service-box {
-        width: 100%;
-        padding: 20px 15px;
-        min-width: auto;
+        width: 45%;
+        min-width: 160px;
     }
 
     /* About section fixes */
     .about-img-content {
         flex-direction: column;
-    }
-
-    .about-content {
-        padding: 15px;
     }
 
     .about-content p {
@@ -736,84 +803,12 @@ html {
         overflow-x: auto;
         white-space: nowrap;
     }
-
-    /* Footer fixes */
-    .footer-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-section {
-        margin: 0;
-        min-width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        padding-top: 140px;
-    }
-
-    /* Stack navigation vertically on very small screens */
-    .nav-main ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .nav-main li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-main li a {
-        display: block;
-        padding: 10px;
-    }
-
-    /* Stack notifications vertically */
-    .Notifications {
-        flex-direction: column;
-    }
-
-    .Admissions, .Academics {
-        width: 100%;
-    }
-
-    /* Stack services vertically */
-    .services-container {
-        grid-template-columns: 1fr;
-    }
-
-    .service-box {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    /* Adjust table for very small screens */
-    table {
-        font-size: 0.9rem;
-    }
-
-    th, td {
-        padding: 8px 6px;
-    }
-
-    .actions {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .actions button {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
 }
 
 @media (max-width: 480px) {
     body {
         padding: 10px;
-        padding-top: 150px;
+        padding-top: 100px;
     }
 
     .header-content {
@@ -829,7 +824,11 @@ html {
     }
 
     .university-logo {
-        height: 45px;
+        height: 40px;
+    }
+
+    .nav-main ul {
+        width: 80%;
     }
 
     .form_container {
@@ -856,6 +855,8 @@ html {
     }
 
     .service-box {
+        width: 100%;
+        max-width: 250px;
         padding: 20px 10px;
     }
 

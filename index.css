@@ -658,62 +658,79 @@ html {
         padding: 12px;
     }
 
-    /* ========== ABOUT MOBILE - SIDE BY SIDE ========== */
-    .about-img-content {
+    /* ========== NOTIFICATIONS MOBILE - 2 UP, 1 DOWN ========== */
+    .Notifications {
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 20px;
-        align-items: center;
+        padding: 20px 10px;
+        justify-content: center;
     }
 
-    .about-content {
-        flex: 1;
-        padding: 10px;
+    .Admissions, .Academics {
+        width: calc(50% - 20px);
+        min-width: 280px;
     }
 
-    .about-content p {
-        padding: 8px 0;
-        font-size: 0.9rem;
-        line-height: 1.6;
+    .Fees {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .about-image {
-        flex: 1;
-        order: 0; /* Keep image on right */
-    }
+    /* ========== ABOUT MOBILE - STACK VERTICALLY ========== */
+   .about-img-content {
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
 
-    .about-image img {
-        max-width: 100%;
-        height: auto;
-    }
+.about-content {
+    flex: 1; /* Equal space for content */
+    padding: 15px;
+    min-width: 0;
+}
 
-    /* ========== SERVICES MOBILE - SPLIT BY TWO ========== */
+.about-content p {
+    padding: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.about-image {
+    flex: 1; /* Equal space for image */
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+}
+
+    /* ========== SERVICES MOBILE - 2x2 GRID ========== */
     .services-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 15px;
+        gap: 20px;
         justify-items: center;
     }
 
     .service-box {
         width: 100%;
-        max-width: 140px;
-        padding: 15px 10px;
-        height: 150px;
+        max-width: 160px;
+        padding: 20px 15px;
+        height: 180px;
     }
 
     .service-box img {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 10px;
-    }
-
-    .service-link {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-
-    .service-box p {
-        font-size: 0.8rem;
+        width: 40px;
+        height: 40px;
     }
 
     /* Contact fixes */
@@ -743,6 +760,26 @@ html {
     .footer-section {
         margin: 0;
         min-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Stack notifications vertically on very small screens */
+    .Notifications {
+        flex-direction: column;
+    }
+
+    .Admissions, .Academics {
+        width: 100%;
+    }
+
+    /* Stack services vertically on very small screens */
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-box {
+        max-width: 250px;
     }
 }
 
@@ -776,29 +813,23 @@ html {
         padding: 15px;
     }
 
-    /* About section for very small screens */
-    .about-img-content {
+    .Notifications {
+        padding: 15px 5px;
         gap: 15px;
     }
 
-    .about-content p {
-        font-size: 0.85rem;
+    .Admissions, .Academics, .Fees {
+        padding: 20px 15px;
     }
 
-    /* Services for very small screens */
-    .service-box {
-        max-width: 130px;
-        height: 140px;
-        padding: 12px 8px;
+    .admission-logo img,
+    .academics-logo img,
+    .fees-logo img {
+        width: 60px;
     }
 
-    .service-box img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .service-link {
-        font-size: 14px;
+    .services {
+        padding: 30px 10px;
     }
 
     .contact-container {
@@ -808,4 +839,20 @@ html {
     .contact-content {
         padding: 15px 10px;
     }
+}
+
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Improve touch targets for mobile */
+button, a {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

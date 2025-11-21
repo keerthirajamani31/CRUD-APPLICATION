@@ -27,7 +27,7 @@ header {
     z-index: 1000;
 }
 
-/* Navigation Alignment - KEEP ORIGINAL DESKTOP DESIGN */
+/* Navigation Alignment */
 .nav-main {
     display: flex;
     justify-content: space-between;
@@ -91,7 +91,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* Hamburger Menu (Hidden on desktop) */
+/* Hamburger Menu (Hidden by default) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -101,7 +101,6 @@ header {
     border: none;
     width: 30px;
     height: 25px;
-    z-index: 1001;
 }
 
 .hamburger span {
@@ -113,7 +112,6 @@ header {
     border-radius: 2px;
 }
 
-/* Form Styles */
 .form_container {
     width: 50%;
     margin-left: 350px;
@@ -221,90 +219,108 @@ th {
     color: white;
 }
 
-/* ========== NOTIFICATIONS - FIXED LAYOUT ========== */
+.Notifications {
+    padding: 50px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: nowrap;
+}
+
 .notification-heading {
     padding-top: 60px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    margin-bottom: 30px;
 }
 
-.Notifications {
-    padding: 20px;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
-
-.Admissions, .Academics, .Fees {
+.Admissions {
     font-family: 'Segoe UI', Arial, sans-serif;
-    width: 350px;
-    min-height: 400px;
+    width: 500px;
     background: rgba(142, 68, 173, 0.15);
     backdrop-filter: blur(8px);
-    padding: 25px;
+    padding: 20px;
     border-radius: 16px;
     transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
 }
 
-.Academics {
-    background: rgba(41, 128, 185, 0.15);
-}
-
-.Fees {
-    background: rgba(39, 174, 96, 0.15);
-}
-
-.Admissions:hover, .Academics:hover, .Fees:hover {
+.Admissions:hover {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
 }
 
-.admission-logo, .academics-logo, .fees-logo {
-    text-align: center;
-    margin-bottom: 20px;
+.Admissions p {
+    padding: 15px;
 }
 
-.admission-logo img, .academics-logo img, .fees-logo img {
+.admission-logo img {
     width: 80px;
     display: block;
-    margin: 0 auto 15px;
+    margin: 0 auto 20px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transition: all 0.3s ease;
 }
 
-.Admissions:hover .admission-logo img,
-.Academics:hover .academics-logo img,
-.Fees:hover .fees-logo img {
+.Admissions:hover .admission-logo img {
     transform: rotate(-5deg) scale(1.1);
 }
 
-.admission-logo h1, .academics-logo h1, .fees-logo h1 {
-    font-size: 1.5rem;
-    margin: 0;
-    color: #fff;
-}
-
-.Admissions p, .Academics p, .Fees p {
-    padding: 8px 0;
-    line-height: 1.6;
-    flex-grow: 1;
+.Academics {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    border-radius: 16px;
+    width: 500px;
+    background: rgba(41, 128, 185, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    transition: all 0.3s ease;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+.Academics img {
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.Academics:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.Fees {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    width: 500px;
+    background: rgba(39, 174, 96, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.Fees p {
+    justify-content: center;
+}
+
+.Fees img {
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.Fees:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
 .notice-link {
     color: #4fc3f7;
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid rgba(79, 195, 247, 0.5);
+    border-bottom: 1px rgba(79, 195, 247, 0.5);
     transition: all 0.2s ease;
 }
 
@@ -313,83 +329,49 @@ html {
     text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
 }
 
-/* ========== ABOUT SECTION - TEXT LEFT, IMAGE RIGHT ========== */
 .About {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 60px 5%;
+    gap: 20px;
+}
+
+.about-content {
+    text-align: justify;
+    padding: 30px;
+}
+
+.about-content p {
+    padding: 20px;
+    width: 700px;
 }
 
 .abouth1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .about-img-content {
     display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.about-content {
-    flex: 1;
-    text-align: left;
-    padding: 20px;
-}
-
-.about-content p {
-    padding: 15px 0;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    text-align: justify;
-}
-
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 500px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
 }
 
-/* ========== SERVICES SECTION ========== */
 .services {
     gap: 50px;
     text-align: center;
-    padding: 60px 5%;
-}
-
-.services h1 {
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-    flex-wrap: wrap;
 }
 
 .service-box {
     background-color: palevioletred;
     padding: 30px;
     border-radius: 14px;
-    width: 250px;
-    height: 200px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
+    height: 150px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -401,15 +383,28 @@ html {
 
 .service-box img {
     object-fit: contain;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 50px;
+    margin-top: 20px;
 }
 
 .service-box:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(255, 133, 178, 0.2);
-    background: linear-gradient(135deg, #ffc0d9 0%, #ff85b2 100%);
+    background: linear-gradient(135deg, #ffc0d9 0%);
+}
+
+.service-box.admission-section:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: linear-gradient(135deg, #ff6ba8 0%, #ffeef4 100%);
+    animation: pulse-glow 1.5s infinite alternate;
 }
 
 .service-link {
@@ -425,13 +420,6 @@ html {
     color: #555;
     text-align: center;
     white-space: wrap;
-}
-
-/* Contact Section */
-.contacth1 {
-    padding: 20px;
-    text-align: center;
-    font-size: 2.5rem;
 }
 
 .contact-container {
@@ -466,12 +454,79 @@ html {
     text-align: center;
 }
 
+.contacth1 p {
+    padding: 40px;
+}
+
+.contacth1 {
+    padding: 20px;
+}
+
 .contact-content img {
     width: 40px;
     height: 40px;
 }
 
-/* Footer */
+.site-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 15px;
+}
+
+.footer-heading {
+    color: #f39c12;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a:hover {
+    color: #f39c12;
+}
+
+.contact-info p {
+    color: #bdc3c7;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+
 .footer {
     background-color: #2c3e50;
     color: white;
@@ -502,6 +557,10 @@ html {
     align-items: center;
 }
 
+.footer-section h3 i {
+    margin-right: 20px;
+}
+
 .footer-section ul {
     list-style: none;
     padding: 0;
@@ -518,6 +577,13 @@ html {
     color: #f39c12;
     transform: translateX(5px);
     cursor: pointer;
+}
+
+.footer-section ul li i {
+    margin-right: 50px;
+    width: 20px;
+    text-align: center;
+    color: #f39c12;
 }
 
 .footer-bottom {
@@ -547,7 +613,23 @@ html {
     opacity: 0.9;
 }
 
-/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .footer-section {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+}
+
+/* ========== MOBILE RESPONSIVE FIXES ========== */
 @media (max-width: 768px) {
     body {
         padding: 15px;
@@ -588,6 +670,7 @@ html {
     /* Hamburger Menu */
     .hamburger {
         display: flex;
+        z-index: 1001;
     }
     
     .nav-main ul {
@@ -658,79 +741,49 @@ html {
         padding: 12px;
     }
 
-    /* ========== NOTIFICATIONS MOBILE - 2 UP, 1 DOWN ========== */
+    /* Notifications - Keep original layout but make responsive */
     .Notifications {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .Admissions, .Academics, .Fees {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    /* Services - Keep original layout but make responsive */
+    .services-container {
         flex-wrap: wrap;
         gap: 20px;
-        padding: 20px 10px;
         justify-content: center;
     }
 
-    .Admissions, .Academics {
-        width: calc(50% - 20px);
-        min-width: 280px;
-    }
-
-    .Fees {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    /* ========== ABOUT MOBILE - STACK VERTICALLY ========== */
-   .about-img-content {
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.about-content {
-    flex: 1; /* Equal space for content */
-    padding: 15px;
-    min-width: 0;
-}
-
-.about-content p {
-    padding: 10px 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    text-align: left;
-}
-
-.about-image {
-    flex: 1; /* Equal space for image */
-    min-width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    border-radius: 8px;
-}
-
-    /* ========== SERVICES MOBILE - 2x2 GRID ========== */
-    .services-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        justify-items: center;
-    }
-
     .service-box {
-        width: 100%;
-        max-width: 160px;
-        padding: 20px 15px;
-        height: 180px;
+        width: 45%;
+        min-width: 160px;
     }
 
-    .service-box img {
-        width: 40px;
-        height: 40px;
+    /* About section fixes */
+    .about-img-content {
+        flex-direction: column;
+    }
+
+    .about-content p {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 0;
     }
 
     /* Contact fixes */
@@ -749,37 +802,6 @@ html {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-    }
-
-    /* Footer fixes */
-    .footer-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-section {
-        margin: 0;
-        min-width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    /* Stack notifications vertically on very small screens */
-    .Notifications {
-        flex-direction: column;
-    }
-
-    .Admissions, .Academics {
-        width: 100%;
-    }
-
-    /* Stack services vertically on very small screens */
-    .services-container {
-        grid-template-columns: 1fr;
-    }
-
-    .service-box {
-        max-width: 250px;
     }
 }
 
@@ -832,6 +854,12 @@ html {
         padding: 30px 10px;
     }
 
+    .service-box {
+        width: 100%;
+        max-width: 250px;
+        padding: 20px 10px;
+    }
+
     .contact-container {
         padding: 20px 15px;
     }
@@ -840,7 +868,6 @@ html {
         padding: 15px 10px;
     }
 }
-
 
 /* Prevent horizontal scrolling */
 body {

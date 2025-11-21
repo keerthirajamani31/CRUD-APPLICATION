@@ -91,7 +91,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* Hamburger Menu (Hidden by default) */
+/* Hamburger Menu (Hidden on desktop) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -101,6 +101,7 @@ header {
     border: none;
     width: 30px;
     height: 25px;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -467,66 +468,6 @@ html {
     height: 40px;
 }
 
-.site-footer {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 40px 0 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 30px;
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 250px;
-    margin: 15px;
-}
-
-.footer-heading {
-    color: #f39c12;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 8px;
-    display: inline-block;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #bdc3c7;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-}
-
-.footer-links a:hover {
-    color: #f39c12;
-}
-
-.contact-info p {
-    color: #bdc3c7;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.5;
-}
-
 .footer {
     background-color: #2c3e50;
     color: white;
@@ -557,10 +498,6 @@ html {
     align-items: center;
 }
 
-.footer-section h3 i {
-    margin-right: 20px;
-}
-
 .footer-section ul {
     list-style: none;
     padding: 0;
@@ -577,13 +514,6 @@ html {
     color: #f39c12;
     transform: translateX(5px);
     cursor: pointer;
-}
-
-.footer-section ul li i {
-    margin-right: 50px;
-    width: 20px;
-    text-align: center;
-    color: #f39c12;
 }
 
 .footer-bottom {
@@ -611,22 +541,6 @@ html {
 .social-icons img:hover {
     transform: scale(1.1);
     opacity: 0.9;
-}
-
-@media (max-width: 768px) {
-    .footer-section {
-        min-width: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        flex-direction: column;
-    }
-    
-    .footer-section {
-        margin-bottom: 30px;
-    }
 }
 
 /* ========== MOBILE RESPONSIVE FIXES ========== */
@@ -670,7 +584,6 @@ html {
     /* Hamburger Menu */
     .hamburger {
         display: flex;
-        z-index: 1001;
     }
     
     .nav-main ul {
@@ -754,16 +667,34 @@ html {
         max-width: 500px;
     }
 
-    /* Services - Keep original layout but make responsive */
+    /* Services - 2x2 Grid */
     .services-container {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
-        justify-content: center;
+        justify-items: center;
     }
 
     .service-box {
-        width: 45%;
-        min-width: 160px;
+        width: 100%;
+        max-width: 150px;
+        padding: 20px 15px;
+        height: 160px;
+    }
+
+    .service-box img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+
+    .service-link {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .service-box p {
+        font-size: 0.85rem;
     }
 
     /* About section fixes */
@@ -786,15 +717,59 @@ html {
         margin-top: 0;
     }
 
-    /* Contact fixes */
+    /* Contact - Keep Horizontal */
     .contact-container {
-        flex-direction: column;
-        gap: 25px;
+        flex-direction: row;
+        gap: 15px;
         padding: 25px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .contact-content {
-        padding: 20px 15px;
+        flex: 1;
+        min-width: 120px;
+        padding: 15px 10px;
+    }
+
+    .contact-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .contact-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .contact-content img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 10px;
+    }
+
+    /* Footer - Keep Horizontal */
+    .footer-container {
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 140px;
+        margin: 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-section ul li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
     }
 
     /* Table fixes */
@@ -855,9 +830,14 @@ html {
     }
 
     .service-box {
-        width: 100%;
-        max-width: 250px;
-        padding: 20px 10px;
+        max-width: 140px;
+        height: 150px;
+        padding: 15px 10px;
+    }
+
+    .service-box img {
+        width: 35px;
+        height: 35px;
     }
 
     .contact-container {
@@ -866,6 +846,11 @@ html {
 
     .contact-content {
         padding: 15px 10px;
+        min-width: 100px;
+    }
+
+    .footer-section {
+        min-width: 120px;
     }
 }
 

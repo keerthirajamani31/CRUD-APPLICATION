@@ -658,66 +658,62 @@ html {
         padding: 12px;
     }
 
-    /* ========== NOTIFICATIONS MOBILE - 2 UP, 1 DOWN ========== */
-    .Notifications {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px 10px;
-        justify-content: center;
-    }
-
-    .Admissions, .Academics {
-        width: calc(50% - 20px);
-        min-width: 280px;
-    }
-
-    .Fees {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    /* ========== ABOUT MOBILE - STACK VERTICALLY ========== */
+    /* ========== ABOUT MOBILE - SIDE BY SIDE ========== */
     .about-img-content {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
     }
 
     .about-content {
+        flex: 1;
         padding: 10px;
     }
 
     .about-content p {
-        padding: 10px 0;
+        padding: 8px 0;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .about-image {
-        order: -1;
+        flex: 1;
+        order: 0; /* Keep image on right */
     }
 
     .about-image img {
-        max-width: 400px;
+        max-width: 100%;
+        height: auto;
     }
 
-    /* ========== SERVICES MOBILE - 2x2 GRID ========== */
+    /* ========== SERVICES MOBILE - SPLIT BY TWO ========== */
     .services-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 15px;
         justify-items: center;
     }
 
     .service-box {
         width: 100%;
-        max-width: 160px;
-        padding: 20px 15px;
-        height: 180px;
+        max-width: 140px;
+        padding: 15px 10px;
+        height: 150px;
     }
 
     .service-box img {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+        margin-bottom: 10px;
+    }
+
+    .service-link {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .service-box p {
+        font-size: 0.8rem;
     }
 
     /* Contact fixes */
@@ -747,26 +743,6 @@ html {
     .footer-section {
         margin: 0;
         min-width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    /* Stack notifications vertically on very small screens */
-    .Notifications {
-        flex-direction: column;
-    }
-
-    .Admissions, .Academics {
-        width: 100%;
-    }
-
-    /* Stack services vertically on very small screens */
-    .services-container {
-        grid-template-columns: 1fr;
-    }
-
-    .service-box {
-        max-width: 250px;
     }
 }
 
@@ -800,23 +776,29 @@ html {
         padding: 15px;
     }
 
-    .Notifications {
-        padding: 15px 5px;
+    /* About section for very small screens */
+    .about-img-content {
         gap: 15px;
     }
 
-    .Admissions, .Academics, .Fees {
-        padding: 20px 15px;
+    .about-content p {
+        font-size: 0.85rem;
     }
 
-    .admission-logo img,
-    .academics-logo img,
-    .fees-logo img {
-        width: 60px;
+    /* Services for very small screens */
+    .service-box {
+        max-width: 130px;
+        height: 140px;
+        padding: 12px 8px;
     }
 
-    .services {
-        padding: 30px 10px;
+    .service-box img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .service-link {
+        font-size: 14px;
     }
 
     .contact-container {
@@ -826,19 +808,4 @@ html {
     .contact-content {
         padding: 15px 10px;
     }
-}
-
-/* Prevent horizontal scrolling */
-body {
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-/* Improve touch targets for mobile */
-button, a {
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

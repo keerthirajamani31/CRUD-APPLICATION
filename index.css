@@ -93,9 +93,9 @@ header {
 
 /* Form Styles */
 .form_container {
-    width: 50%;
-    margin-left: 350px;
-    margin-top: 40px;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -105,6 +105,7 @@ header {
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -116,10 +117,9 @@ input {
     width: 100%;
     border-radius: 4px;
     border: 1px solid #ddd;
-    font-size: 26px;
     box-sizing: border-box;
     font-family: sans-serif;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     text-align: left;
 }
@@ -140,28 +140,30 @@ input {
 
 #save-btn {
     background-color: #4CAF50;
-    padding: 11px;
+    padding: 12px 20px;
     font-weight: bolder;
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    flex: 1;
 }
 
 #cancel-btn {
     background-color: #f44336;
-    padding: 7px;
+    padding: 12px 20px;
     font-weight: bolder;
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    flex: 1;
 }
 
 #save-btn:hover {
-    background-color: #4CAF50;
+    background-color: #45a049;
 }
 
 #cancel-btn:hover {
-    background-color: #f44336;
+    background-color: #da190b;
 }
 
 table {
@@ -169,24 +171,29 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     color: #111;
+    overflow-x: auto;
+    display: block;
 }
 
 th,
 td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: left;
     color: #f2f2f2;
 }
 
 th {
     color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .actions button {
-    padding: 5px 10px;
+    padding: 6px 12px;
     margin-right: 5px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 .edit-btn {
@@ -200,108 +207,74 @@ th {
 }
 
 /* Notifications */
-.Notifications {
-    padding: 50px;
-    display: flex;
-    gap: 60px;
-    flex-wrap: nowrap;
-}
-
 .notification-heading {
-    padding-top: 60px;
+    padding-top: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
 
-.Admissions {
+.Notifications {
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.Admissions, .Academics, .Fees {
     font-family: 'Segoe UI', Arial, sans-serif;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     background: rgba(142, 68, 173, 0.15);
     backdrop-filter: blur(8px);
-    padding: 20px;
+    padding: 25px;
     border-radius: 16px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-.Admissions:hover {
+.Academics {
+    background: rgba(41, 128, 185, 0.15);
+}
+
+.Fees {
+    background: rgba(39, 174, 96, 0.15);
+}
+
+.Admissions:hover, .Academics:hover, .Fees:hover {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
 }
 
-.Admissions p {
-    padding: 15px;
+.Admissions p, .Academics p, .Fees p {
+    padding: 10px 0;
+    line-height: 1.6;
 }
 
-.admission-logo img {
-    width: 80px;
+.admission-logo img, .academics-logo img, .fees-logo img {
+    width: 70px;
     display: block;
     margin: 0 auto 20px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transition: all 0.3s ease;
 }
 
-.Admissions:hover .admission-logo img {
+.Admissions:hover .admission-logo img,
+.Academics:hover .academics-logo img,
+.Fees:hover .fees-logo img {
     transform: rotate(-5deg) scale(1.1);
-}
-
-.Academics {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    border-radius: 16px;
-    width: 500px;
-    background: rgba(41, 128, 185, 0.15);
-    backdrop-filter: blur(8px);
-    padding: 20px;
-    transition: all 0.3s ease;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-.Academics img {
-    width: 80px;
-    display: block;
-    margin: 0 auto 20px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transition: all 0.3s ease;
-}
-
-.Academics:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-
-.Fees {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    width: 500px;
-    background: rgba(39, 174, 96, 0.15);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.Fees p {
-    justify-content: center;
-}
-
-.Fees img {
-    width: 80px;
-    display: block;
-    margin: 0 auto 20px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transition: all 0.3s ease;
-}
-
-.Fees:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-
 .notice-link {
     color: #4fc3f7;
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px rgba(79, 195, 247, 0.5);
+    border-bottom: 1px solid rgba(79, 195, 247, 0.5);
     transition: all 0.2s ease;
 }
 
@@ -315,46 +288,63 @@ html {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 40px 20px;
 }
 
 .about-content {
     text-align: justify;
-    padding: 30px;
+    padding: 20px;
 }
 
 .about-content p {
-    padding: 20px;
-    width: 700px;
+    padding: 15px 0;
+    width: 100%;
+    line-height: 1.7;
 }
 
 .abouth1 {
-    padding: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
 .about-img-content {
     display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 .about-image img {
     width: 100%;
+    max-width: 500px;
     height: auto;
-    margin-top: 50px;
+    border-radius: 10px;
 }
 
 /* Services */
 .services {
-    gap: 50px;
+    padding: 40px 20px;
     text-align: center;
+}
+
+.services h1 {
+    margin-bottom: 30px;
 }
 
 .service-box {
     background-color: palevioletred;
-    padding: 30px;
+    padding: 25px 20px;
     border-radius: 14px;
-    flex: 1;
-    min-width: 250px;
-    max-width: 280px;
-    height: 150px;
+    width: 100%;
+    height: auto;
+    min-height: 150px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -362,26 +352,28 @@ html {
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .service-box img {
     object-fit: contain;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
 }
 
 .services-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 50px;
+    gap: 25px;
     margin-top: 20px;
 }
 
 .service-box:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(255, 133, 178, 0.2);
-    background: linear-gradient(135deg, #ffc0d9 0%);
+    background: linear-gradient(135deg, #ffc0d9 0%, #ff85b2 100%);
 }
 
 .service-link {
@@ -390,59 +382,63 @@ html {
     margin-bottom: 10px;
     color: rgba(26, 23, 23, 0.832);
     text-decoration: none;
+    text-align: center;
 }
 
 .service-box p {
     margin: 0;
     color: #555;
     text-align: center;
-    white-space: wrap;
+    line-height: 1.4;
 }
 
 /* Contact */
+.contacth1 {
+    padding: 20px;
+    text-align: center;
+}
+
 .contact-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: #2c4f71;
     backdrop-filter: blur(15px);
-    box-shadow: 0 4px 15px rgb(0, 0, 0,);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     margin: 40px auto;
     max-width: 1200px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(174, 139, 139, 0.1);
+    border-radius: 10px;
     padding: 30px;
     color: #f2f2f2;
+    gap: 30px;
 }
 
 .contact-content h3 {
     text-align: center;
     color: #f5faff;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
 }
 
 .contact-content {
     flex: 1;
     text-align: center;
-    padding: 0 20px;
+    padding: 20px;
+    min-width: 250px;
+    box-sizing: border-box;
 }
 
 .contact-content p {
     color: #f5f5f5;
     text-align: center;
-}
-
-.contacth1 p {
-    padding: 40px;
-}
-
-.contacth1 {
-    padding: 20px;
+    line-height: 1.6;
+    margin-bottom: 8px;
 }
 
 .contact-content img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
 }
 
 /* Footer */
@@ -455,16 +451,17 @@ html {
 
 .footer-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 30px;
 }
 
 .footer-section {
     flex: 1;
     min-width: 200px;
-    margin: 35px;
+    margin-bottom: 30px;
 }
 
 .footer-section h3 {
@@ -472,8 +469,7 @@ html {
     margin-bottom: 20px;
     font-size: 1.2rem;
     padding-bottom: 10px;
-    display: flex;
-    align-items: center;
+    border-bottom: 2px solid rgba(243, 156, 18, 0.3);
 }
 
 .footer-section ul {
@@ -483,15 +479,14 @@ html {
 
 .footer-section ul li {
     margin-bottom: 12px;
-    display: flex;
-    align-items: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+    color: #bdc3c7;
 }
 
 .footer-section ul li:hover {
     color: #f39c12;
     transform: translateX(5px);
-    cursor: pointer;
 }
 
 .footer-bottom {
@@ -502,6 +497,8 @@ html {
     background-color: #2c3e50;
     color: white;
     font-family: Arial, sans-serif;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-icons {
@@ -511,8 +508,8 @@ html {
 }
 
 .social-icons img {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     transition: transform 0.3s ease;
 }
 
@@ -541,33 +538,37 @@ html {
 
     #save-btn, #cancel-btn {
         width: 100%;
-        padding: 12px;
+        padding: 15px;
     }
 
     /* Notifications - 2 up, 1 down layout */
     .Notifications {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 10px;
     }
 
-    .Admissions, .Academics, .Fees {
+    .Admissions, .Academics {
+        width: calc(50% - 20px);
+        min-width: 280px;
+    }
+
+    .Fees {
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     /* Services - 2 pairs layout */
     .services-container {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
-        justify-content: center;
     }
 
     .service-box {
-        width: 45%;
-        min-width: 160px;
-        height: auto;
+        width: 100%;
         padding: 20px 15px;
     }
 
@@ -576,9 +577,12 @@ html {
         flex-direction: column;
     }
 
+    .about-content {
+        padding: 15px;
+    }
+
     .about-content p {
-        width: 100%;
-        padding: 15px 0;
+        padding: 10px 0;
     }
 
     .about-image {
@@ -588,30 +592,17 @@ html {
     .about-image img {
         width: 100%;
         max-width: 400px;
-        margin-top: 0;
     }
 
     /* Contact fixes */
     .contact-container {
         flex-direction: column;
         gap: 25px;
-        padding: 25px;
+        padding: 25px 20px;
     }
 
     .contact-content {
-        padding: 20px;
-    }
-
-    /* Table fixes */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    th, td {
-        padding: 10px 8px;
-        font-size: 0.9rem;
+        padding: 20px 15px;
     }
 
     /* Footer fixes */
@@ -624,9 +615,46 @@ html {
         margin: 0;
         min-width: 100%;
     }
+}
 
-    .footer-section h3 {
-        font-size: 1.3rem;
+@media (max-width: 600px) {
+    /* Stack notifications vertically on very small screens */
+    .Notifications {
+        flex-direction: column;
+    }
+
+    .Admissions, .Academics {
+        width: 100%;
+    }
+
+    /* Stack services vertically */
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-box {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Adjust table for very small screens */
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px 6px;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .actions button {
+        padding: 8px;
+        font-size: 0.9rem;
     }
 }
 
@@ -636,43 +664,17 @@ html {
         padding-top: 100px;
     }
 
-    /* Form fixes for very small screens */
     .form_container {
         padding: 15px;
     }
 
-    /* Services - single column on very small screens */
-    .service-box {
-        width: 100%;
-        max-width: 250px;
+    .Notifications {
+        padding: 15px 5px;
+        gap: 15px;
     }
 
-    /* Contact improvements */
-    .contact-container {
-        padding: 20px 15px;
-    }
-
-    .contact-content {
-        padding: 15px;
-    }
-
-    /* Table improvements */
-    table {
-        font-size: 0.85rem;
-    }
-
-    th, td {
-        padding: 8px 6px;
-    }
-
-    .actions button {
-        padding: 4px 8px;
-        font-size: 0.8rem;
-    }
-
-    /* Notification improvements */
     .Admissions, .Academics, .Fees {
-        padding: 15px;
+        padding: 20px 15px;
     }
 
     .admission-logo img,
@@ -681,10 +683,20 @@ html {
         width: 60px;
     }
 
-    /* About text improvements */
-    .about-content p {
-        padding: 10px 0;
-        font-size: 0.95rem;
+    .services {
+        padding: 30px 10px;
+    }
+
+    .service-box {
+        padding: 20px 10px;
+    }
+
+    .contact-container {
+        padding: 20px 15px;
+    }
+
+    .contact-content {
+        padding: 15px 10px;
     }
 }
 
@@ -697,6 +709,7 @@ body {
 /* Improve touch targets for mobile */
 button, a {
     min-height: 44px;
+    min-width: 44px;
     display: flex;
     align-items: center;
     justify-content: center;

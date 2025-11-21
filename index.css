@@ -27,7 +27,7 @@ header {
     z-index: 1000;
 }
 
-/* Navigation Alignment */
+/* Navigation Alignment - YOUR ORIGINAL HEADER */
 .nav-main {
     display: flex;
     justify-content: space-between;
@@ -90,6 +90,71 @@ header {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+    
+    .nav-main {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 10px 3%;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .nav-main ul {
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .header-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .header-text h3 {
+        font-size: 0.8rem;
+    }
+    
+    .university-logo {
+        height: 50px;
+    }
+    
+    .nav-main a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 140px;
+    }
+    
+    .nav-main ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .nav-main a {
+        padding: 8px;
+        display: block;
+        text-align: center;
+    }
+    
+    .header-text h1 {
+        font-size: 1rem;
+    }
+}
+
+/* ========== MOBILE RESPONSIVE FIXES FOR OTHER SECTIONS ========== */
 
 /* Form Styles */
 .form_container {
@@ -518,13 +583,8 @@ html {
     opacity: 0.9;
 }
 
-/* ========== MOBILE RESPONSIVE FIXES ========== */
+/* ========== MOBILE RESPONSIVE FIXES FOR OTHER SECTIONS ========== */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-        padding-top: 100px;
-    }
-
     /* Form fixes */
     .form_container {
         width: 95%;
@@ -659,11 +719,6 @@ html {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-        padding-top: 100px;
-    }
-
     .form_container {
         padding: 15px;
     }

@@ -5,50 +5,36 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-:root {
-    --primary: #1a5276;
-    --secondary: #2e86c1;
-    --accent: #f39c12;
-    --light: #ecf0f1;
-    --dark: #2c3e50;
-    --success: #27ae60;
-    --danger: #e74c3c;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: #f5f5f5;
-    background-image: linear-gradient(rgba(26, 82, 118, 0.8), rgba(46, 134, 193, 0.8)), url('https://via.placeholder.com/1920x1080/1a5276/ffffff?text=Background');
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: url(./crudimage.jpg);
     color: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    padding-top: 80px;
+    padding: 40px;
+    padding-top: 100px;
 }
 
-/* Header Styles */
 header {
-    background: rgba(26, 82, 118, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white like your form */
+    backdrop-filter: blur(8px); /* Same blur effect as your form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0 5%;
 }
 
+/* Navigation Alignment */
 .nav-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 5%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 10px 0;
 }
 
 .studentportal {
@@ -59,43 +45,37 @@ header {
 .header-content {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
+    gap: 20px;
 }
 
 .university-logo {
-    height: 50px;
+    height: 60px;
     width: auto;
     border-radius: 5px;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-text h1 {
-    font-size: 1.2rem;
-    margin-bottom: 3px;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
     font-weight: 600;
     line-height: 1.2;
 }
 
 .header-text h3 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    color: var(--light);
 }
 
-.nav-menu {
+.nav-main ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
 
-.nav-menu li a {
+.nav-main li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -106,466 +86,521 @@ header {
     font-size: 0.9rem;
 }
 
-.nav-menu li a:hover {
+.nav-main a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 5px;
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+    
+    .nav-main {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 10px 3%;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .nav-main ul {
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .header-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .header-text h3 {
+        font-size: 0.8rem;
+    }
+    
+    .university-logo {
+        height: 50px;
+    }
+    
+    .nav-main a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
 }
 
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-/* Form Section */
-.form-section {
-    padding: 20px 5%;
+@media (max-width: 480px) {
+    body {
+        padding-top: 140px;
+    }
+    
+    .nav-main ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .nav-main a {
+        padding: 8px;
+        display: block;
+        text-align: center;
+    }
+    
+    .header-text h1 {
+        font-size: 1rem;
+    }
 }
 
 .form_container {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 50%;
+    margin-left: 350px;
+    margin-top: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 30px;
 }
 
-.form_container h1 {
+h1 {
     text-align: center;
-    margin-bottom: 20px;
-    color: var(--light);
-    font-size: 1.8rem;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    font-weight: bolder;
+    padding: 10px;
 }
 
 input {
     width: 100%;
-    border-radius: 6px;
+    border-radius: 4px;
     border: 1px solid #ddd;
+    font-size: 26px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    padding: 10px;
     font-size: 16px;
-    padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s ease;
+    text-align: left;
 }
 
-input:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.3);
-}
-
-#forgot-email {
-    text-align: right;
-    margin-bottom: 20px;
+.buttons {
+    padding: 17px;
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    border: none;
 }
 
 #forgot-email a {
     text-decoration: none;
-    color: var(--light);
-    font-size: 0.9rem;
-}
-
-#forgot-email a:hover {
-    text-decoration: underline;
-}
-
-.buttons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-#save-btn, #cancel-btn {
-    padding: 12px 25px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    border: none;
-    flex: 1;
-    transition: all 0.3s ease;
-    font-size: 1rem;
+    color: #f2f2f2;
+    margin-left: 16px;
 }
 
 #save-btn {
-    background-color: var(--success);
-    color: white;
-}
-
-#save-btn:hover {
-    background-color: #219653;
-    transform: translateY(-2px);
+    background-color: #4CAF50;
+    padding: 11px;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
 }
 
 #cancel-btn {
-    background-color: var(--danger);
-    color: white;
+    background-color: #f44336;
+    padding: 7px;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+#save-btn:hover {
+    background-color: #4CAF50;
 }
 
 #cancel-btn:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
+    background-color: #f44336;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    color: #111;
 }
 
-th, td {
-    padding: 12px 15px;
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f2f2f2;
 }
 
 th {
-    background-color: rgba(26, 82, 118, 0.7);
-    color: var(--light);
-    font-weight: 600;
-}
-
-td {
-    color: var(--light);
-}
-
-.actions {
-    display: flex;
-    gap: 8px;
+    color: #f2f2f2;
 }
 
 .actions button {
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
 }
 
 .edit-btn {
-    background-color: var(--secondary);
+    background-color: #2196F3;
     color: white;
-}
-
-.edit-btn:hover {
-    background-color: #2471a3;
 }
 
 .delete-btn {
-    background-color: var(--danger);
+    background-color: #f44336;
     color: white;
 }
 
-.delete-btn:hover {
-    background-color: #c0392b;
-}
-
-/* Section Headings */
-.section-heading {
-    text-align: center;
-    margin: 40px 0 30px;
-    font-size: 2.2rem;
-    color: var(--light);
-    position: relative;
-}
-
-.section-heading::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 2px;
-}
-
-/* Notifications Section */
-.notifications-section {
-    padding: 20px 5%;
+.Notifications {
+    padding: 50px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: nowrap;
 }
 
 .notification-heading {
-    margin-bottom: 30px;
-}
-
-.Notifications {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.notification-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.notification-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding-top: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .Admissions {
-    background: rgba(142, 68, 173, 0.2);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    width: 500px;
+    background: rgba(142, 68, 173, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.Admissions:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.Admissions p {
+    padding: 15px;
+}
+
+.admission-logo img {
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.Admissions:hover .admission-logo img {
+    transform: rotate(-5deg) scale(1.1);
 }
 
 .Academics {
-    background: rgba(41, 128, 185, 0.2);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    border-radius: 16px;
+    width: 500px;
+    background: rgba(41, 128, 185, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Academics img {
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.Academics:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .Fees {
-    background: rgba(39, 174, 96, 0.2);
-    grid-column: 1 / -1;
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    width: 500px;
+    background: rgba(39, 174, 96, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
 }
 
-.admission-logo, .academics-logo, .fees-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+.Fees p {
+    justify-content: center;
 }
 
-.admission-logo i, .academics-logo i, .fees-logo i {
-    font-size: 2.5rem;
-    color: var(--accent);
+.Fees img {
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
 }
 
-.admission-logo h2, .academics-logo h2, .fees-logo h2 {
-    font-size: 1.5rem;
-    color: var(--light);
-}
-
-.notification-content p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+.Fees:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .notice-link {
-    color: var(--accent);
+    color: #4fc3f7;
     text-decoration: none;
     font-weight: 600;
+    border-bottom: 1px rgba(79, 195, 247, 0.5);
     transition: all 0.2s ease;
 }
 
 .notice-link:hover {
-    color: #f1c40f;
-    text-decoration: underline;
+    color: #64ffda;
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
 }
 
-/* About Section */
-.about-section {
-    padding: 40px 5%;
-    background: rgba(26, 82, 118, 0.3);
+.About {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-content {
+    text-align: justify;
+    padding: 30px;
+}
+
+.about-content p {
+    padding: 20px;
+    width: 700px;
+}
+
+.abouth1 {
+    padding: 10px;
 }
 
 .about-img-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.about-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-content p {
-    margin-bottom: 20px;
-    text-align: justify;
-    line-height: 1.7;
-}
-
-.about-image {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 500px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
 }
 
-/* Services Section */
-.services-section {
-    padding: 40px 5%;
+.services {
+    gap: 50px;
+    text-align: center;
+}
+
+.service-box {
+    background-color: palevioletred;
+    padding: 30px;
+    border-radius: 14px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-box img {
+    object-fit: contain;
+    width: 40px;
+    height: 40px;
 }
 
 .services-container {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.service-pair {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.service-box {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 50px;
+    margin-top: 20px;
 }
 
 .service-box:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 20px rgba(255, 133, 178, 0.2);
+    background: linear-gradient(135deg, #ffc0d9 0%);
 }
 
-.service-icon {
-    margin-bottom: 15px;
-}
-
-.service-icon i {
-    font-size: 2.5rem;
-    color: var(--accent);
+.service-box.admission-section:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: linear-gradient(135deg, #ff6ba8 0%, #ffeef4 100%);
+    animation: pulse-glow 1.5s infinite alternate;
 }
 
 .service-link {
-    display: block;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 18px;
     margin-bottom: 10px;
-    color: var(--light);
+    color: rgba(26, 23, 23, 0.832);
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.service-link:hover {
-    color: var(--accent);
 }
 
 .service-box p {
-    color: #ddd;
-    line-height: 1.5;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 40px 5%;
-    background: rgba(26, 82, 118, 0.3);
+    margin: 0;
+    color: #555;
+    text-align: center;
+    white-space: wrap;
 }
 
 .contact-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-around;
+    background-color: #2c4f71;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 15px rgb(0, 0, 0,);
+    margin: 40px auto;
     max-width: 1200px;
-    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(174, 139, 139, 0.1);
+    padding: 30px;
+    color: #f2f2f2;
+}
+
+.contact-content h3 {
+    text-align: center;
+    color: #f5faff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .contact-content {
     flex: 1;
-    min-width: 250px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 30px 20px;
-    transition: all 0.3s ease;
-}
-
-.contact-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.contact-icon {
-    margin-bottom: 15px;
-}
-
-.contact-icon i {
-    font-size: 2.2rem;
-    color: var(--accent);
-}
-
-.contact-content h3 {
-    margin-bottom: 20px;
-    color: var(--light);
-    font-size: 1.4rem;
+    padding: 0 20px;
 }
 
 .contact-content p {
-    margin-bottom: 10px;
-    color: #ddd;
+    color: #f5f5f5;
+    text-align: center;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--dark);
-    color: white;
-    padding: 50px 5% 20px;
+.contacth1 p {
+    padding: 40px;
+}
+
+.contacth1 {
+    padding: 20px;
+}
+
+.contact-content img {
+    width: 40px;
+    height: 40px;
+}
+
+.site-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 15px;
+}
+
+.footer-heading {
+    color: #f39c12;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a:hover {
+    color: #f39c12;
+}
+
+.contact-info p {
+    color: #bdc3c7;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 0 auto 30px;
-    gap: 30px;
+    margin: 0 auto;
 }
 
 .footer-section {
     flex: 1;
     min-width: 200px;
+    margin: 35px;
 }
 
 .footer-section h3 {
-    color: var(--accent);
+    color: #f39c12;
     margin-bottom: 20px;
     font-size: 1.2rem;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(243, 156, 18, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+.footer-section h3 i {
+    margin-right: 20px;
 }
 
 .footer-section ul {
@@ -575,195 +610,240 @@ td {
 
 .footer-section ul li {
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
     transition: all 0.3s ease;
-    cursor: pointer;
-    color: #bdc3c7;
 }
 
 .footer-section ul li:hover {
-    color: var(--accent);
+    color: #f39c12;
     transform: translateX(5px);
+    cursor: pointer;
+}
+
+.footer-section ul li i {
+    margin-right: 50px;
+    width: 20px;
+    text-align: center;
+    color: #f39c12;
 }
 
 .footer-bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-bottom p {
-    margin-bottom: 15px;
-    color: #bdc3c7;
+    padding: 20px 0;
+    background-color: #2c3e50;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
 .social-icons {
+    margin-top: 15px;
     display: flex;
     gap: 20px;
 }
 
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: all 0.3s ease;
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
-    background: var(--accent);
-    transform: translateY(-3px);
+.social-icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
 }
 
-.social-icons i {
-    color: white;
-    font-size: 1.2rem;
-}
+/* Add these mobile responsive styles to your existing CSS */
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .nav-main {
-        padding: 10px 3%;
+/* Mobile First Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        padding-top: 120px;
     }
-    
+
+    /* Header fixes for mobile */
+    .nav-main {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+    }
+
     .header-text h1 {
         font-size: 1.1rem;
     }
-    
-    .header-text h3 {
-        font-size: 0.75rem;
-    }
-    
-    .nav-menu {
-        gap: 15px;
-    }
-    
-    .nav-menu li a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-    }
-}
 
-@media (max-width: 768px) {
-    body {
-        padding-top: 70px;
+    .header-text h3 {
+        font-size: 0.8rem;
     }
-    
-    .nav-main {
+
+    .nav-main ul {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
-    
-    .menu-toggle {
-        display: flex;
+
+    .nav-main li a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
-    
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(26, 82, 118, 0.95);
-        position: absolute;
-        top: 70px;
-        left: 0;
+
+  
+    .form_container {
+        width: 90%;
+        margin: 20px auto;
         padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .nav-menu.active {
-        display: flex;
-    }
-    
-    .nav-menu li {
-        margin: 5px 0;
-        text-align: center;
-    }
-    
-    .header-content {
-        flex-direction: row;
-    }
-    
-    .header-text h1 {
-        font-size: 1rem;
-    }
-    
+
+   
     .Notifications {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
     }
-    
-    .Fees {
-        grid-column: 1;
+
+    .Admissions, .Academics, .Fees {
+        width: 100%;
+        max-width: 400px;
     }
-    
-    .service-pair {
-        grid-template-columns: 1fr;
+
+ 
+    .services-container {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
     }
-    
+
+    .service-box {
+        width: 45%;
+        min-width: 150px;
+        height: auto;
+        padding: 20px 15px;
+    }
+
+
     .about-img-content {
         flex-direction: column;
     }
-    
+
+    .about-content p {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .contact-content {
+        padding: 15px;
+    }
+
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+
     .footer-container {
         flex-direction: column;
+        gap: 25px;
     }
-    
+
     .footer-section {
-        margin-bottom: 30px;
+        margin: 0;
+        min-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding-top: 60px;
+        padding-top: 140px;
     }
-    
-    .header-content {
+
+    .nav-main ul {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-main li {
+        width: 100%;
         text-align: center;
-        gap: 10px;
     }
-    
+
+    .nav-main li a {
+        display: block;
+        padding: 10px;
+    }
+
+ 
+    .service-box {
+        width: 100%;
+        max-width: 250px;
+    }
+
+  
     .header-text h1 {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
-    
+
     .header-text h3 {
         font-size: 0.7rem;
     }
-    
+
     .university-logo {
-        height: 40px;
+        height: 45px;
     }
-    
-    .form_container {
-        padding: 15px;
-    }
-    
+
     .buttons {
         flex-direction: column;
     }
-    
-    table {
-        font-size: 0.9rem;
+
+    #save-btn, #cancel-btn {
+        width: 100%;
     }
-    
-    th, td {
-        padding: 8px 10px;
-    }
-    
-    .section-heading {
-        font-size: 1.8rem;
-    }
-    
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .footer-bottom {
-        text-align: center;
-    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+button, a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+body {
+    overflow-x: hidden;
+    max-width: 100%;
 }

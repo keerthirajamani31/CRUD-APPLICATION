@@ -1,261 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - Anna University</title>
-    <link rel="stylesheet" href="index.css">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
+
     <header id="Home-section">
+
         <nav class="nav-main">
             <div class="studentportal">
                 <div class="header-content">
-                    <div class="logo-container">
-                        <img src="https://via.placeholder.com/60x60/1a5276/ffffff?text=AU" alt="Anna University Logo" class="university-logo">
-                    </div>
+                    <img src="bird_2.jpg" alt="Anna University Logo" class="university-logo">
                     <div class="header-text">
                         <h1>STUDENT PORTAL E-Governance</h1>
                         <h3>Anna University, Chennai</h3>
                     </div>
                 </div>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
+            <ul>
+
                 <li><a href="#Home-section">HOME</a></li>
                 <li><a href="#about-section">ABOUT</a></li>
                 <li><a href="#notifications-section">NOTIFICATIONS</a></li>
-                <li><a href="#course-section">COURSE OVERVIEW</a></li>
-                <li><a href="#team-section">TEAM</a></li>
+                <li><a href="#">COURSE OVERVIEW</a></li>
+                <li><a href="#">TEAM</a></li>
                 <li><a href="#contact-section">CONTACT</a></li>
                 <li><a href="#services-section">SERVICES</a></li>
+
+
             </ul>
         </nav>
+
     </header>
 
-    <main>
-        <section class="form-section">
-            <form onsubmit="event.preventDefault();onformsubmit()" autocomplete="off" class="form_container" id="form_contents">
-                <h1>STUDENT LOGIN</h1>
-                <div class="form">
-                    <div class="form-group">
-                        <input type="text" id="name_input" placeholder="Name">
-                    </div>
+    <form onsubmit="event.preventDefault();onformsubmit()" autocomplete="off" class="form_container" id="form_contents">
+        <h1>STUDENT LOGIN</h1>
+        <div class="form">
+            <div class="form-group">
 
-                    <div class="form-group">
-                        <input type="text" id="email_input" placeholder="Email">
-                    </div>
-                    <p id="forgot-email">
-                        <a href="#">Forgot Email?</a>
-                    </p>
-                    <div class="buttons">
-                        <button type="submit" id="save-btn">Save</button>
-                        <button type="button" id="cancel-btn">Cancel</button>
-                    </div>
-                </div>
-                <table class="table_content" id="student_list">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </form>
-        </section>
-
-        <section class="notifications-section" id="notifications-section">
-            <div class="notification-heading">
-                <h1>NOTIFICATIONS</h1>
+                <input type="text" id="name_input" placeholder="Name">
             </div>
-            <div class="Notifications">
-                <div class="Admissions notification-card">
-                    <div class="admission-logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h2>Admissions</h2>
-                    </div>
-                    <div class="notification-content">
-                        <p>Students can fill the Data Sheet for admission only if their allotment category is displayed hereunder.</p>
-                        <p>Admissions 2025 - Special Reservation The Data entry and Fee payment portal for the allotted candidates is Live now.<a href="#admission-portal" class="notice-link">Click here</a></p>
-                        <p>Admissions 2025 - Round 1 The Data entry and Fee payment portal for the allotted candidates is Live now <a href="#round1-portal" class="notice-link">Click here</a></p>
-                        <p>For Instructions to the Candidates to fill the admission data, <a href="#instructions" class="notice-link">Click here</a></p>
-                    </div>
-                </div>
-                <div class="Academics notification-card">
-                    <div class="academics-logo">
-                        <i class="fas fa-book-open"></i>
-                        <h2>Academics</h2>
-                    </div>
-                    <div class="notification-content">
-                        <p>Internal assessment begins from August 10 for all branches</p>
-                        <p>Semester end examinations schedule will be announced soon</p>
-                        <p>Faculty development program scheduled for next month</p>
-                    </div>
-                </div>
-                <div class="Fees notification-card">
-                    <div class="fees-logo">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <h2>Fees</h2>
-                    </div>
-                    <div class="notification-content">
-                        <p>Fees portal open for all Higher Semester UG/PG students of University Departments last date to pay fees is 20th July 2025</p>
-                        <p>Scholarship applications for SC/ST students are now open</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="about-section" id="about-section">
-            <h1 class="section-heading">About CE-GOV</h1>
-            <div class="about-img-content">
-                <div class="about-content">
-                    <p>The Centre for e-Governance is involved in enabling online services for all the stakeholders connected with Anna University. The services are provided through the portal named ACADEMICA which can be accessed from auegov.ac.in. This portal facilitates the students of university departments and constituent colleges to perform all the activities starting from admissions to the issue of transfer certificates on completion of the course.</p>
-                    <p>The staff members shall perform Comprehensive Profile Management, periodic Confidential Report submission, Salary/GPF/CPS/ Advances/Settlement/IT related activities, Biometric attendance management, Course Enrollment and Students Attendance, Students' Feedback, and other important services using this portal.</p>
-                    <p>The ACADEMICA services are extended for constituent colleges, research scholars also. Recently, the facilities for appropriate fee collection from the affiliated colleges and autonomous colleges for different centres is launched.</p>
-                    <p>The websites for all the university departments have been launched, which is totally facilitated through dynamic contents from the respective departments.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/500x300/2e86c1/ffffff?text=About+CE-GOV" alt="About CE-GOV">
-                </div>
-            </div>
-        </section>
+            <div class="form-group">
 
-        <section class="services-section" id="services-section">
-            <h1 class="section-heading">SERVICES</h1>
-            <div class="services-container">
-                <div class="service-pair">
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <a href="#admission-section" class="service-link">Admissions</a>
-                        <p>New student admission</p>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <a href="#pensioner-section" class="service-link">Pensioner</a>
-                        <p>Pensioner Services</p>
-                    </div>
-                </div>
-                <div class="service-pair">
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
-                        <a href="#amalgamate-section" class="service-link">Web-Amalgamate</a>
-                        <p>Web services for Departments/Centres</p>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-hubspot"></i>
-                        </div>
-                        <a href="#hub-section" class="service-link">College-Hub</a>
-                        <p>Affiliated & Autonomous institutions services</p>
-                    </div>
-                </div>
+                <input type="text" id="email_input" placeholder="Email">
             </div>
-        </section>
-
-        <section class="contact-section" id="contact-section">
-            <h1 class="section-heading">CONTACT</h1>
-            <div class="contact-container">
-                <div class="contact-content">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Address</h3>
-                    <p>Centre for e-Governance</p>
-                    <p>First floor, Centre for Excellence Building</p>
-                    <p>Anna University, Chennai - 600025</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <p>044-2235 7972 (Support Desk)</p>
-                    <p>044-2235 7973 (Admission/Fee)</p>
-                    <p>044-2235 7963 (Office)</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>support@auegov.ac.in</p>
-                </div>
+            <p id="forgot-email">
+                <a href="#">Forgot Email?</a>
+            </p>
+            <div class="buttons">
+                <button type="submit" id="save-btn">Save</button>
+                <button type="button" id="cancel-btn">Cancel</button>
             </div>
-        </section>
-    </main>
+        </div>
+        <table class="table_content" id="student_list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </form>
 
-    <footer class="footer">
+
+    <div class="notification-heading" id="notifications-section">
+        <P>
+        <h1>NOTIFICATIONS</h1>
+        </P>
+    </div>
+    <div class="Notifications">
+
+        <div class="Admissions">
+            <div class="admission-logo">
+                <img src="graduation-cap.png" />
+                <h1>Admissions</h1>
+                <p>Students can fill the Data Sheet for admission only if their allotment category is displayed
+                    hereunder.
+                <p>Admissions 2025 - Special Reservation The Data entry and Fee payment portal for the allotted
+                    candidates
+                    is Live now.<a href="#admission-portal" class="notice-link">Click here</a></p>
+                <p> Admissions 2025 - Round 1 The Data entry and Fee payment portal for the allotted candidates is Live
+                    now
+                    <a href="#round1-portal" class="notice-link">Click here</a>
+                </p>
+                <p>For Instructions to the Candidates to fill the admission data, <a href="#instructions"
+                        class="notice-link">Click here</a></p>
+            </div>
+        </div>
+        <div class="Academics">
+            <div class="academics-logo">
+                <img src="open-book.png" />
+                <h1>Academics</h1>
+                <p>Internal assessment begins from August 10 for all branches</p>
+            </div>
+        </div>
+
+        <div class="Fees">
+            <div class="fees-logo">
+                <img src="fee.png" />
+                <h1>Fees</h1>
+                <p>Fees portal open for all Higher Semester UG/PG students of University Departments last date to pay
+                    fees
+                    is 20th July 2025</p>
+            </div>
+        </div>
+
+    </div>
+
+  
+    <div class="About" id="about-section">
+      <h1 class="abouth1">About CE-GOV</h1>
+        <div class="about-img-content">
+            <div class="about-content">
+
+                <P>The Centre for e-Governance is involved in enabling online services for all the stakeholders
+                    connected
+                    with
+                    Anna University.The services are provided through the portal named ACADEMICA which can be accessed
+                    from
+                    auegov.ac.in. This
+                    portal facilitates the students of university departments and constituent colleges to perform all
+                    the
+                    activities starting from admissions to the issue of transfer certificates on completion of the
+                    course.
+                    The
+                    staff members shall perform Comprehensive Profile Management, periodic Confidential Report
+                    submission,
+                    Salary/GPF/CPS/ Advances/Settlement/IT related activities, Biometric attendance management,
+                    Course Enrollment and Students Attendance,
+                    Students' Feedback, and other important services using this portal.</P>
+
+                <p>The ACADEMICA services are extended for constituent colleges, research scholars also. Recently,
+                    the facilities for appropriate fee collection from the affiliated colleges and autonomous colleges
+                    for
+                    different centres is launched.</p>
+                <p>The websites for all the university departments have been launched,
+                    which is totally facilitated through dynamic contents from the respective departments.</P>
+            </div>
+            <div class="about-image">
+                <img src="about.jpg" />
+
+
+            </div>
+        </div>
+    </div>
+
+    <h1>SERVICES</h1>
+    <div class="services" id="services-section">
+        
+        <div class="services-container">
+            <div class="service-box">
+                <img src="collegebuilding.png" />
+                <a href="#admission-section" class="service-link">Admissions</a>
+                <p>New student admission</p>
+            </div>
+            <div class="service-box">
+                <img src="user.png" />
+                <a href="#pensioner-section" class="service-link">Pensioner</a>
+                <p>Pensioner Services</p>
+            </div>
+            <div class="service-box">
+                <img src="earthgrid.png" />
+                <a href="#amalgamate-section" class="service-link">Web-Amalgamate</a>
+                <p>Web services for Departments/Centres</p>
+            </div>
+            <div class="service-box">
+                <img src="hub.png" />
+                <a href="#hub-section" class="service-link">College-Hub</a>
+                <p>Affiliated & Autonomous institutions services</p>
+            </div>
+        </div>
+    </div>
+    <h1 class="contacth1">CONTACT</h1>
+    <div class="contact-container" id="contact-section">
+     
+     <div class="contact-content">
+    <img src="location.png"/>
+     <h3>Address</h3>
+   <p> Centre for e-Governance</p>
+<p>First floor, Centre for Excellence Building</p>
+<p>Anna University, Chennai - 600025
+    </p></div>
+    <div class="contact-content">
+         <img src="phone-call.png"/>
+      <h3>Phone</h3>
+       <p> 044-2235 7972 (Support Desk)</p>
+<p>044-2235 7973 (Admission/Fee)</p>
+<p>044-2235 7963 (Office)</p></div>
+    <div class="contact-content">
+         <img src="email.png"/>
+       <h3>Email</h3>
+    <p>support@auegov.ac.in
+    </p>
+
+    </div></div>
+
+   <footer class="footer">
         <div class="footer-container">
+            <!-- Academic Section -->
             <div class="footer-section">
-                <h3>Academic</h3>
+                <h3> Academic</h3>
                 <ul>
-                    <li>Centre for Academic Courses</li>
-                    <li>Controller of Examinations</li>
+                    <li> Centre for Academic Courses</li>
+                    <li> Controller of Examinations</li>
                     <li>Additional Controller of Examinations</li>
                     <li>Centre for Research</li>
                     <li>Centre for Students Affairs</li>
                 </ul>
             </div>
 
+            <!-- Centers Section -->
             <div class="footer-section">
-                <h3>Centers</h3>
+                <h3><i class="fas fa-university"></i> Centers</h3>
                 <ul>
-                    <li>Centre for Admissions</li>
-                    <li>Centre for Distance Education</li>
-                    <li>Centre for International Relations</li>
-                    <li>Internal Quality Assurance Cell</li>
-                    <li>Centre for University Industry Collaboration</li>
-                    <li>University Library</li>
+                    <li> Centre for Admissions</li>
+                    <li> Centre for Distance Education</li>
+                    <li> Centre for International Relations</li>
+                    <li> Internal Quality Assurance Cell</li>
+                    <li> Centre for University Industry Collaboration</li>
+                    <li> University Library</li>
                 </ul>
             </div>
 
+            <!-- Administration Section -->
             <div class="footer-section">
-                <h3>Administration</h3>
+                <h3> Administration</h3>
                 <ul>
-                    <li>University Administration</li>
+                    <li> University Administration</li>
                     <li>Deans (UDs)</li>
                 </ul>
             </div>
 
+            <!-- Resources Section -->
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3> Resources</h3>
                 <ul>
                     <li>Academic Registration Request Form</li>
-                    <li>TC Application (2013 or Earlier Admissions)</li>
+                    <li> TC Application (2013 or Earlier Admissions)</li>
                 </ul>
             </div>
 
+            <!-- Policies Section -->
             <div class="footer-section">
-                <h3>Policies</h3>
+                <h3> Policies</h3>
                 <ul>
-                    <li>Privacy Policy</li>
+                    <li> Privacy Policy</li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Anna University. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+  <p>&copy; 2025 University Name. All rights reserved.</p>
+  <div class="social-icons">
+    <img src="facebook.png" alt="Facebook"/>
+    <img src="youtube.png" alt="YouTube"/>
+    <img src="twitter.png" alt="Twitter"/>
+    <img src="instagram.png" alt="Instagram"/>
+  </div>
+</div>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
-</html>
+
+</html> 
+

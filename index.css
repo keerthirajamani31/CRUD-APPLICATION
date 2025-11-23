@@ -732,7 +732,7 @@ th {
     }
 
     .services-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 2fr;
         gap: 15px;
         padding: 0 10px;
     }
@@ -776,7 +776,7 @@ th {
 
     /* Footer Mobile */
     .footer-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 25px;
         text-align: center;
     }

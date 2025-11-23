@@ -638,42 +638,58 @@ html {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    /* Form fixes */
+    /* Form fixes - Centered */
     .form_container {
         width: 95%;
         margin: 20px auto;
         padding: 20px;
         margin-left: auto;
+        text-align: center;
     }
 
     .buttons {
         flex-direction: column;
+        align-items: center;
     }
 
     #save-btn, #cancel-btn {
         width: 100%;
         padding: 12px;
+        max-width: 200px;
     }
 
-    /* Notifications - Keep original layout but make responsive */
+    /* Notifications - Centered */
     .Notifications {
         flex-direction: column;
         align-items: center;
         gap: 25px;
         padding: 20px;
+        text-align: center;
     }
 
     .Admissions, .Academics, .Fees {
         width: 100%;
         max-width: 500px;
+        text-align: center;
+        margin: 0 auto;
     }
 
-    /* Services - 2x2 Grid */
+    .Admissions p, .Academics p, .Fees p {
+        text-align: center;
+    }
+
+    /* Services - 2x2 Grid Centered */
+    .services {
+        text-align: center;
+    }
+
     .services-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         justify-items: center;
+        margin: 0 auto;
+        max-width: 400px;
     }
 
     .service-box {
@@ -681,103 +697,149 @@ html {
         max-width: 150px;
         padding: 20px 15px;
         height: 160px;
+        text-align: center;
     }
 
     .service-box img {
         width: 40px;
         height: 40px;
         margin-bottom: 12px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .service-link {
         font-size: 16px;
         margin-bottom: 8px;
+        text-align: center;
     }
 
     .service-box p {
         font-size: 0.85rem;
+        text-align: center;
     }
 
-    /* About section fixes */
+    /* About section - Centered */
+    .About {
+        text-align: center;
+    }
+
     .about-img-content {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-content {
+        width: 100%;
+        text-align: center;
     }
 
     .about-content p {
         width: 100%;
         padding: 10px 0;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .about-image {
         margin-top: 20px;
+        text-align: center;
     }
 
     .about-image img {
         width: 100%;
         max-width: 400px;
         margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Contact - Keep Horizontal */
+    /* Contact - Horizontal and Centered */
     .contact-container {
         flex-direction: row;
         gap: 15px;
         padding: 25px 20px;
         flex-wrap: wrap;
         justify-content: center;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .contact-content {
         flex: 1;
         min-width: 120px;
         padding: 15px 10px;
+        text-align: center;
     }
 
     .contact-content h3 {
         font-size: 1.1rem;
         margin-bottom: 12px;
+        text-align: center;
     }
 
     .contact-content p {
         font-size: 0.85rem;
         line-height: 1.4;
+        text-align: center;
     }
 
     .contact-content img {
         width: 35px;
         height: 35px;
         margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Footer - Keep Horizontal */
+    /* Footer - Horizontal and Centered */
     .footer-container {
         flex-direction: row;
         gap: 20px;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        text-align: center;
     }
 
     .footer-section {
         flex: 1;
         min-width: 140px;
         margin: 10px;
+        text-align: center;
     }
 
     .footer-section h3 {
         font-size: 1.1rem;
         margin-bottom: 15px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footer-section ul {
+        text-align: center;
     }
 
     .footer-section ul li {
         font-size: 0.85rem;
         margin-bottom: 8px;
+        text-align: center;
+        justify-content: center;
     }
 
-    /* Table fixes */
+    /* Headings - Centered */
+    h1, .abouth1, .contacth1, .notification-heading h1 {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Table fixes - Centered */
     table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+        margin: 0 auto;
     }
 }
 
@@ -785,6 +847,7 @@ html {
     body {
         padding: 10px;
         padding-top: 100px;
+        text-align: center;
     }
 
     .header-content {
@@ -830,6 +893,10 @@ html {
         padding: 30px 10px;
     }
 
+    .services-container {
+        max-width: 350px;
+    }
+
     .service-box {
         max-width: 140px;
         height: 150px;
@@ -852,6 +919,17 @@ html {
 
     .footer-section {
         min-width: 120px;
+    }
+
+    /* Ensure everything is centered */
+    .form_container,
+    .Notifications,
+    .services-container,
+    .about-img-content,
+    .contact-container,
+    .footer-container {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

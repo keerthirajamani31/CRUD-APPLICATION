@@ -362,7 +362,7 @@ th {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Services Section */
+/* Services Section - Horizontal for Laptop */
 .services-title {
     text-align: center;
     font-size: 2.2rem;
@@ -378,8 +378,8 @@ th {
 .services-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+    flex-wrap: nowrap;
+    gap: 50px;
     margin-top: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -388,10 +388,11 @@ th {
 .service-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    padding: 25px 20px;
+    padding: 30px 25px;
     border-radius: 12px;
-    width: 100%;
-    max-width: 250px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
     height: 180px;
     display: flex;
     flex-direction: column;
@@ -480,21 +481,22 @@ th {
     margin-bottom: 15px;
 }
 
-/* Footer */
+/* Footer - Improved Horizontal Layout */
 .footer {
-    background-color: rgba(44, 62, 80, 0.9);
+    background-color: rgba(44, 62, 80, 0.95);
     color: white;
-    padding: 40px 20px;
-    margin-top: 50px;
+    padding: 50px 20px 30px;
+    margin-top: 60px;
+    border-top: 3px solid #f39c12;
 }
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
+    flex-wrap: nowrap;
+    max-width: 1400px;
     margin: 0 auto;
-    gap: 30px;
+    gap: 40px;
 }
 
 .footer-section {
@@ -505,38 +507,54 @@ th {
 .footer-section h3 {
     color: #f39c12;
     margin-bottom: 20px;
-    font-size: 1.2rem;
-    padding-bottom: 10px;
+    font-size: 1.3rem;
+    padding-bottom: 12px;
     border-bottom: 2px solid #f39c12;
+    font-weight: 600;
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-section ul li {
     margin-bottom: 12px;
     transition: all 0.3s ease;
     cursor: pointer;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section ul li:last-child {
+    border-bottom: none;
 }
 
 .footer-section ul li:hover {
     color: #f39c12;
-    transform: translateX(5px);
+    transform: translateX(8px);
+    border-bottom-color: #f39c12;
 }
 
 .footer-bottom {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 30px 0 0;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom p {
+    color: #bdc3c7;
+    font-size: 0.95rem;
 }
 
 .social-icons {
-    margin-top: 20px;
     display: flex;
     gap: 20px;
 }
@@ -544,7 +562,7 @@ th {
 .social-icons img {
     width: 32px;
     height: 32px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -725,15 +743,20 @@ th {
         padding: 12px 0;
     }
 
-    /* Services Mobile */
+    /* Services Mobile - 2x2 Grid */
     .services-title {
         font-size: 1.8rem;
         margin: 30px 0 15px;
     }
 
     .services-container {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
         gap: 15px;
+        margin-top: 20px;
+        max-width: 400px;
+        margin: 0 auto;
         padding: 0 10px;
     }
 
@@ -741,6 +764,7 @@ th {
         max-width: 100%;
         height: 160px;
         padding: 20px 15px;
+        min-width: auto;
     }
 
     .service-box img {
@@ -792,6 +816,12 @@ th {
     .footer-section ul li {
         justify-content: center;
     }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -825,13 +855,15 @@ th {
     }
 
     .services-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 350px;
     }
 
     .service-box {
-        max-width: 280px;
-        margin: 0 auto;
+        max-width: 100%;
+        height: 150px;
+        padding: 15px 10px;
     }
 
     .nav-menu {
